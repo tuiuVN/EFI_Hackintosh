@@ -1,0 +1,12 @@
+vừa thêm vào:
+ codec commander
+acpikeybattery
+ lilu
+
+aDummyHDA.kext
+AnyiSightCam.kext
+AppleALC.kext
+ApplePS2SmartTouchPad.kext
+ATH9KFixup.kext
+ATH9KInjector.kext
+IntelGraphicsFixup.kext
