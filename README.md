@@ -1,2 +1,2 @@
-# EFI_Clover
-phân vùng efi có clover
+# EFI_Hackintosh
+1. K46CA Clover
