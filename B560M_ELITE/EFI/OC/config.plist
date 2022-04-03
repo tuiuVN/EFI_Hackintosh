@@ -8,7 +8,7 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>【必须】如果支持AWAC新时钟和RTC旧时钟就开启这个</string>
+				<string>AWAC new clock and RTC old clock</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
@@ -16,7 +16,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>修复USB</string>
+				<string>Repair USB</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
@@ -24,7 +24,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>【必须】启用CPU原生电源管理增加节能-电能小憩</string>
+				<string>Enable CPU native power management to increase energy saving - power nap</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
@@ -32,7 +32,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>搜索 PMCR 、 APP9876缺失按下电源键呼出 “重新启动、睡眠、取消、关机” 菜单</string>
+				<string>Search PMCR, APP9876 is missing Press the power button to call out the "Restart, Sleep, Cancel, Shutdown"</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
@@ -40,7 +40,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>修复USB，400系列主板以上需要</string>
+				<string>Repair USB for 400 series</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
@@ -187,46 +187,17 @@
 				<data>AwCRPg==</data>
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
+				<key>framebuffer-patch-enable</key>
+				<data>01000000</data>
+				<key>framebuffer-stolenmem</key>
+				<data>00003001</data>
 				<key>model</key>
 				<string>Intel UHD Graphics 630</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
 			<dict>
 				<key>layout-id</key>
-				<integer>66</integer>
-			</dict>
-			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
-			<dict>
-				<key>@0,name</key>
-				<string>ATY,Deepbay</string>
-				<key>@1,name</key>
-				<string>ATY,Deepbay</string>
-				<key>@2,name</key>
-				<string>ATY,Deepbay</string>
-				<key>@3,name</key>
-				<string>ATY,Deepbay</string>
-				<key>AAPL,slot-name</key>
-				<string>Slot-1</string>
-				<key>ATY,Card#</key>
-				<string>113-1E4480U-O6M</string>
-				<key>ATY,DeviceName</key>
-				<string>RX6600XT</string>
-				<key>ATY,EFIVersion</key>
-				<string>020.003.000</string>
-				<key>ATY,EFIVersionB</key>
-				<string>113-1E4480U-O6M</string>
-				<key>ATY,EFIVersionROMB</key>
-				<string>113-1E4480U-O6M</string>
-				<key>ATY,FamilyName</key>
-				<string>Radeon Pro</string>
-				<key>device_type</key>
-				<string>ATY,DeepbayParent</string>
-				<key>hda-gfx</key>
-				<string>onboard-1</string>
-				<key>model</key>
-				<string>Radeon RX6600XT</string>
-				<key>name</key>
-				<string>ATY_GPU</string>
+				<data>EAQC</data>
 			</dict>
 		</dict>
 		<key>Delete</key>
@@ -265,6 +236,24 @@
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/VirtualSMC</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>WhateverGreen.kext</string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/WhateverGreen</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -463,24 +452,6 @@
 				<true/>
 				<key>ExecutablePath</key>
 				<string></string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>Any</string>
-				<key>BundlePath</key>
-				<string>WhateverGreen.kext</string>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/WhateverGreen</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -835,7 +806,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>-igfxvesa -v debug=0x100 keepsyms=1</string>
+				<string>-igfxvesa -v debug=0x100 keepsyms=1 alcid=12</string>
 				<key>csr-active-config</key>
 				<data>/w8AAA==</data>
 				<key>prev-lang:kbd</key>
@@ -940,7 +911,7 @@
 			<key>MaxBIOSVersion</key>
 			<false/>
 			<key>MLB</key>
-			<string>C02034401CDPHCD1H</string>
+			<string>C02037306J9LNV91F</string>
 			<key>ProcessorType</key>
 			<integer>4105</integer>
 			<key>ROM</key>
@@ -952,9 +923,9 @@
 			<key>SystemProductName</key>
 			<string>iMac20,1</string>
 			<key>SystemSerialNumber</key>
-			<string>C02D80AAPN5T</string>
+			<string>C02DDSY0JV3Q</string>
 			<key>SystemUUID</key>
-			<string>C4D562BE-2DF4-416E-B56D-81F69BA5A3E3</string>
+			<string>6F521180-7C64-4412-8B01-21B02756C660</string>
 		</dict>
 		<key>PlatformNVRAM</key>
 		<dict>
